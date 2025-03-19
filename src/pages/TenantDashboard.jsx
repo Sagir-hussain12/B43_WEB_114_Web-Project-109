@@ -2,12 +2,13 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../store/userAuthStore';
 import { Button } from '../Components/ui/button';
-import { Bell, Home, MessageSquare, Settings, PenTool as Tool, LogOut, DollarSign, User } from 'lucide-react';
+import { Bell, Home, MessageSquare, Settings as SettingsIcon, PenTool as Tool, LogOut, DollarSign, User } from 'lucide-react';
 import { MaintenanceRequestForm } from '../Components/MaintenanceRequestForm';
 import { RequestList } from '../Components/RequestList';
 import { RentPaymentTracker } from '../Components/RentPaymentTracker';
 import { TenantChat } from '../Components/TenantChat';
 import { TenantProfile } from '../Components/TenantProfile';
+import Settings from '../Components/LandlordDashbord/Settings';
 
 export function TenantDashboard() {
   const { user } = useAuthStore();
@@ -20,7 +21,7 @@ export function TenantDashboard() {
     { icon: DollarSign, label: 'Payments', id: 'payments' },
     { icon: MessageSquare, label: 'Messages', id: 'messages' },
     { icon: User, label: 'Profile', id: 'profile' },
-    { icon: Settings, label: 'Settings', id: 'settings' },
+    { icon: SettingsIcon, label: 'Settings', id: 'settings' },
   ];
 
   const renderContent = () => {
@@ -35,6 +36,8 @@ export function TenantDashboard() {
         return <TenantChat />;
       case 'profile':
         return <TenantProfile />;
+        case 'settings':
+          return <Settings />;
       default:
         return <RequestList />;
     }
@@ -45,7 +48,8 @@ export function TenantDashboard() {
       {/* Sidebar */}
       <aside className="fixed left-0 top-0 h-full w-64 bg-white shadow-lg">
         <div className="flex h-16 items-center justify-center border-b">
-          <h1 className="text-xl font-bold text-primary">PropertyConnect</h1>
+          <button onClick={() => setActiveTab('')}><h1 className="text-xl font-bold text-primary">PropertyConnect</h1></button>
+          
         </div>
         
         <div className="p-4">
