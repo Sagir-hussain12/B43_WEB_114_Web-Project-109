@@ -10,6 +10,8 @@ import RentPaymentOverview from '../Components/LandlordDashbord/RentPaymentOverv
 import LandlordChat from '../Components/LandlordDashbord/LandlordChart';
 import Reports from '../Components/LandlordDashbord/Reports';
 import Settings from '../Components/LandlordDashbord/Settings';
+import { NotificationDropdown } from '../Components/NotificationDropdown';
+import { FloatingChatbot } from '../Components/AiChatBot';
 export function LandlordDashboard() {
   const { user } = useAuthStore();
   const navigate = useNavigate();
@@ -101,14 +103,10 @@ export function LandlordDashboard() {
           <h2 className="text-2xl font-bold">
             {navigationItems.find((item) => item.id === activeTab)?.label}
           </h2>
-          <Button variant="ghost" className="relative">
-            <Bell className="h-5 w-5" />
-            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] text-white">
-              5
-            </span>
-          </Button>
+         <NotificationDropdown/>
+        
         </header>
-
+<FloatingChatbot/>
         {/* Dynamic Content */}
         {renderContent()}
       </main>

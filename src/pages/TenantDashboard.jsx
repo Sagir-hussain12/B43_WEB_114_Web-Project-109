@@ -9,6 +9,8 @@ import { RentPaymentTracker } from '../Components/RentPaymentTracker';
 import { TenantChat } from '../Components/TenantChat';
 import { TenantProfile } from '../Components/TenantProfile';
 import Settings from '../Components/LandlordDashbord/Settings';
+import { FloatingChatbot } from '../Components/AiChatBot';
+import { NotificationDropdown } from '../Components/NotificationDropdown';
 
 export function TenantDashboard() {
   const { user } = useAuthStore();
@@ -55,12 +57,12 @@ export function TenantDashboard() {
         <div className="p-4">
           <div className="mb-6 flex items-center space-x-3">
             <img
-              src={user?.avatar || `https://ui-avatars.com/api/?name=${user?.name}`}
+              src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces"
               alt="Profile"
               className="h-10 w-10 rounded-full"
             />
             <div>
-              <p className="font-medium">{user?.name}</p>
+              <p className="font-medium">Sarah Johnson</p>
               <p className="text-sm text-gray-500 capitalize">{user?.role}</p>
             </div>
           </div>
@@ -100,14 +102,9 @@ export function TenantDashboard() {
           <h2 className="text-2xl font-bold">
             {navigationItems.find((item) => item.id === activeTab)?.label}
           </h2>
-          <Button variant="ghost" className="relative">
-            <Bell className="h-5 w-5" />
-            <span className="absolute -right-1 -top-1 flex h-4 w-4 items-center justify-center rounded-full bg-red-500 text-[10px] text-white">
-              3
-            </span>
-          </Button>
+      <NotificationDropdown/>
         </header>
-
+       <FloatingChatbot/>
         {/* Dynamic Content */}
         {renderContent()}
       </main>

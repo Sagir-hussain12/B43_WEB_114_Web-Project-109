@@ -1,23 +1,9 @@
 import React from 'react';
-import { useNavigate } from 'react-router-dom';
-import { useAuthStore } from '../store/userAuthStore';
 import { Button } from './ui/button';
-import { Bell, Home, MessageSquare, Settings, PenTool as Tool, LogOut, DollarSign, Users, Phone, Mail, MapPin, Calendar } from 'lucide-react';
+import { Bell, MessageSquare, PenTool as DollarSign, Phone, Mail, MapPin, Calendar } from 'lucide-react';
 
 export function TenantPage() {
-  const { user } = useAuthStore();
-  const navigate = useNavigate();
-
-  const navigationItems = [
-    { icon: Home, label: 'Dashboard', href: '/' },
-    { icon: Users, label: 'Tenants', href: '/tenant' },
-    { icon: Tool, label: 'Maintenance', href: '#maintenance' },
-    { icon: MessageSquare, label: 'Messages', href: '#messages' },
-    { icon: DollarSign, label: 'Payments', href: '#payments' },
-    { icon: Settings, label: 'Settings', href: '#settings' },
-  ];
-
-  const tenants = [
+ const tenants = [
     {
       id: 1,
       name: 'Sarah Johnson',
@@ -52,56 +38,6 @@ export function TenantPage() {
 
   return (
     <div className="min-h-screen bg-gray-50">
-      {/* Sidebar */}
-      <aside className="fixed left-0 top-0 h-full w-64 bg-white shadow-lg">
-        <div className="flex h-16 items-center justify-center border-b">
-          <h1 className="text-xl font-bold text-primary">PropertyConnect</h1>
-        </div>
-        
-        <div className="p-4">
-          <div className="mb-6 flex items-center space-x-3">
-            <img
-              src={user?.avatar || `https://ui-avatars.com/api/?name=${user?.name}`}
-              alt="Profile"
-              className="h-10 w-10 rounded-full"
-            />
-            <div>
-              <p className="font-medium">{user?.name}</p>
-              <p className="text-sm text-gray-500 capitalize">{user?.role}</p>
-            </div>
-          </div>
-
-          <nav className="space-y-1">
-            {navigationItems.map((item) => (
-              <a
-                key={item.label}
-                href={item.href}
-                onClick={(e) => {
-                  if (item.href.startsWith('/')) {
-                    e.preventDefault();
-                    navigate(item.href);
-                  }
-                }}
-                className="flex items-center space-x-3 rounded-lg px-3 py-2 text-gray-700 hover:bg-gray-100"
-              >
-                <item.icon className="h-5 w-5" />
-                <span>{item.label}</span>
-              </a>
-            ))}
-          </nav>
-        </div>
-
-        <div className="absolute bottom-0 w-full border-t p-4">
-          <Button
-            variant="ghost"
-            className="w-full justify-start text-red-600 hover:bg-red-50 hover:text-red-700"
-          >
-            <LogOut className="mr-2 h-5 w-5" />
-            Logout
-          </Button>
-        </div>
-      </aside>
-
       {/* Main Content */}
       <main className="ml-64 p-8">
         {/* Header */}
