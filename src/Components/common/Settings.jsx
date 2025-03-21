@@ -42,7 +42,6 @@ const Settings = () => {
 
   return (
     <div>
-      <h3 className="mb-6 text-2xl font-bold">Settings</h3>
 
       {/* Profile Settings */}
       <div className="mb-8 bg-white rounded-lg shadow-sm p-6">

@@ -1,23 +1,24 @@
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { Camera, Mail, Phone, Home, Calendar, Edit2 } from 'lucide-react';
+import React, { useState } from "react";
+import { Button } from "../common/ui/button";
+import { Camera, Mail, Phone, Home, Calendar, Edit2 } from "lucide-react";
 
 export function TenantProfile() {
   const [isEditing, setIsEditing] = useState(false);
   const [profile, setProfile] = useState({
-    name: 'Sarah Johnson',
-    email: 'sarah.j@example.com',
-    phone: '+1 (555) 123-4567',
-    address: '123 Main St, Apt 4B',
-    moveInDate: '2023-06-15',
-    leaseEnd: '2024-06-14',
-    avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces',
+    name: "Sarah Johnson",
+    email: "sarah.j@example.com",
+    phone: "+1 (555) 123-4567",
+    address: "123 Main St, Apt 4B",
+    moveInDate: "2023-06-15",
+    leaseEnd: "2024-06-14",
+    avatar:
+      "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces",
   });
 
   const handleSave = () => {
     setIsEditing(false);
     // Handle saving profile changes
-    console.log('Saving profile:', profile);
+    console.log("Saving profile:", profile);
   };
 
   return (
@@ -26,10 +27,10 @@ export function TenantProfile() {
         <div className="flex items-center justify-between">
           <h2 className="text-2xl font-bold">Profile Information</h2>
           <Button
-            variant={isEditing ? 'default' : 'outline'}
-            onClick={() => isEditing ? handleSave() : setIsEditing(true)}
+            variant={isEditing ? "default" : "outline"}
+            onClick={() => (isEditing ? handleSave() : setIsEditing(true))}
           >
-            {isEditing ? 'Save Changes' : 'Edit Profile'}
+            {isEditing ? "Save Changes" : "Edit Profile"}
           </Button>
         </div>
 
@@ -157,7 +158,7 @@ export function TenantProfile() {
       <div className="rounded-lg bg-white p-6 shadow-sm">
         <h3 className="text-lg font-semibold">Documents</h3>
         <div className="mt-4 space-y-4">
-          {['Lease Agreement', 'Move-in Checklist', 'Building Rules'].map(
+          {["Lease Agreement", "Move-in Checklist", "Building Rules"].map(
             (doc, index) => (
               <div
                 key={index}

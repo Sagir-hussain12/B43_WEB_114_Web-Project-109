@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { Button } from '../Components/ui/button';
-import { Users, Key, MessageCircle, CreditCard } from 'lucide-react';
+import { Button } from "../Components/common/ui/button";
+import { Users, Key, MessageCircle, CreditCard,Wrench  } from 'lucide-react';
 import image2vector from "../assets/image2vector.svg";
 import '../styles.css'; // Adjust the path as needed
 
@@ -32,7 +32,7 @@ export function LandingPage() {
         <div className="mx-auto flex h-16 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-8">
           <div className="flex items-center space-x-2">
             <div className="relative">
-              <div className="absolute inset-0 bg-pink-500 blur-sm rounded-full"></div>
+              <div className="absolute inset-0 bg-pink-500 blur-sm rounded-full mt-2"></div>
               <img src={image2vector} alt="logo" className="h-12 w-12 mt-2 relative z-10 rounded-full"/> 
             </div>
             <span className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-pink-500">PropertyConnect</span>
@@ -72,23 +72,31 @@ export function LandingPage() {
             >
               <Button 
                 className="bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-bold py-3 px-8 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg"
-                onClick={() => navigate('/learn-more')}
+               onClick={() => {
+                document.getElementById('modern-solution' ).scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
               >
                 Learn More
               </Button>
               <Button 
-                className="bg-transparent border-2 border-white/50 text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transform hover:scale-105 transition-all duration-300 text-lg"
-                onClick={() => window.open('https://calendly.com/propertyconnect/demo')}
-              >
-                Book a Demo
-              </Button>
+  className="bg-transparent border-2 border-white/50 text-white font-bold py-3 px-8 rounded-full hover:bg-white/10 transform hover:scale-105 transition-all duration-300 text-lg"
+  onClick={() => {
+    document.getElementById('experience-section').scrollIntoView({ 
+      behavior: 'smooth' 
+    });
+  }}
+>
+  Book a Demo
+</Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Role Selection Cards */}
-      <section className="py-16 bg-white/5 backdrop-blur-sm">
+      <section id="experience-section" className="py-16 bg-white/5 backdrop-blur-sm">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 
             className={`text-3xl font-bold text-center mb-16 transition-all duration-700 ease-out ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
@@ -159,7 +167,7 @@ export function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section className="py-24">
+      <section id='modern-solution' className="py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 
             className={`text-3xl font-bold text-center mb-4 transition-all duration-700 ease-out ${mounted ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}
@@ -183,13 +191,13 @@ export function LandingPage() {
                 color: 'from-blue-500 to-cyan-400',
                 delay: 400
               },
-              // {
-              //   icon: <Tools className="h-8 w-8" />,
-              //   title: 'Maintenance Tracking',
-              //   description: 'Real-time updates and scheduling for maintenance requests with photo documentation.',
-              //   color: 'from-purple-500 to-indigo-400',
-              //   delay: 600
-              // },
+              {
+                icon: <Wrench  className="h-8 w-8" />,
+                title: 'Maintenance Tracking',
+                description: 'Real-time updates and scheduling for maintenance requests with photo documentation.',
+                color: 'from-purple-500 to-indigo-400',
+                delay: 600
+              },
               {
                 icon: <CreditCard className="h-8 w-8" />,
                 title: 'Secure Payments',
@@ -236,7 +244,11 @@ export function LandingPage() {
           >
             <Button 
               className="bg-gradient-to-r from-blue-500 to-purple-600 hover:from-blue-600 hover:to-purple-700 text-white font-bold py-4 px-10 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 text-lg"
-              onClick={() => navigate('/get-started')}
+              onClick={() => {
+                document.getElementById('experience-section').scrollIntoView({ 
+                  behavior: 'smooth' 
+                });
+              }}
             >
               Get Started Today
             </Button>

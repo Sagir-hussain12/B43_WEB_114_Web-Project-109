@@ -1,38 +1,49 @@
-import React from 'react';
-import { Button } from './ui/button';
-import { Bell, MessageSquare, PenTool as DollarSign, Phone, Mail, MapPin, Calendar } from 'lucide-react';
+import React from "react";
+import { Button } from "../common/ui/button";
+import {
+  Bell,
+  MessageSquare,
+  PenTool as DollarSign,
+  Phone,
+  Mail,
+  MapPin,
+  Calendar,
+} from "lucide-react";
 
 export function TenantPage() {
- const tenants = [
+  const tenants = [
     {
       id: 1,
-      name: 'Sarah Johnson',
-      email: 'sarah.j@example.com',
-      phone: '+1 (555) 123-4567',
-      address: '123 Main St, Apt 4B',
-      moveInDate: '2023-06-15',
-      status: 'Active',
-      avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces',
+      name: "Sarah Johnson",
+      email: "sarah.j@example.com",
+      phone: "+1 (555) 123-4567",
+      address: "123 Main St, Apt 4B",
+      moveInDate: "2023-06-15",
+      status: "Active",
+      avatar:
+        "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop&crop=faces",
     },
     {
       id: 2,
-      name: 'Michael Chen',
-      email: 'michael.c@example.com',
-      phone: '+1 (555) 987-6543',
-      address: '456 Oak Ave, Unit 2A',
-      moveInDate: '2023-09-01',
-      status: 'Active',
-      avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces',
+      name: "Michael Chen",
+      email: "michael.c@example.com",
+      phone: "+1 (555) 987-6543",
+      address: "456 Oak Ave, Unit 2A",
+      moveInDate: "2023-09-01",
+      status: "Active",
+      avatar:
+        "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop&crop=faces",
     },
     {
       id: 3,
-      name: 'Emily Davis',
-      email: 'emily.d@example.com',
-      phone: '+1 (555) 456-7890',
-      address: '789 Pine St, Apt 7C',
-      moveInDate: '2024-01-15',
-      status: 'Active',
-      avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces',
+      name: "Emily Davis",
+      email: "emily.d@example.com",
+      phone: "+1 (555) 456-7890",
+      address: "789 Pine St, Apt 7C",
+      moveInDate: "2024-01-15",
+      status: "Active",
+      avatar:
+        "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop&crop=faces",
     },
   ];
 
@@ -71,7 +82,7 @@ export function TenantPage() {
                   </span>
                 </div>
               </div>
-              
+
               <div className="space-y-3">
                 <div className="flex items-center text-sm text-gray-600">
                   <Mail className="mr-2 h-4 w-4" />

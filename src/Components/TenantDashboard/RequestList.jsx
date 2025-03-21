@@ -1,70 +1,73 @@
-import React from 'react';
-import { Button } from './ui/button';
-import { PenTool as Tool, Clock, CheckCircle, AlertTriangle } from 'lucide-react';
+import React from "react";
+import { Button } from "../common/ui/button";
+import {
+  PenTool as Tool,
+  Clock,
+  CheckCircle,
+  AlertTriangle,
+} from "lucide-react";
 
 export function RequestList() {
   const requests = [
     {
       id: 1,
-      title: 'Leaking Faucet',
-      category: 'Plumbing',
-      status: 'In Progress',
-      urgency: 'Medium',
-      date: '2024-03-15',
-      description: 'Kitchen sink faucet is leaking continuously',
+      title: "Leaking Faucet",
+      category: "Plumbing",
+      status: "In Progress",
+      urgency: "Medium",
+      date: "2024-03-15",
+      description: "Kitchen sink faucet is leaking continuously",
       updates: [
-        { date: '2024-03-15', message: 'Request received' },
-        { date: '2024-03-16', message: 'Technician assigned' },
+        { date: "2024-03-15", message: "Request received" },
+        { date: "2024-03-16", message: "Technician assigned" },
       ],
     },
     {
       id: 2,
-      title: 'AC Not Cooling',
-      category: 'HVAC',
-      status: 'Pending',
-      urgency: 'High',
-      date: '2024-03-14',
-      description: 'Air conditioning unit is not cooling properly',
-      updates: [
-        { date: '2024-03-14', message: 'Request received' },
-      ],
+      title: "AC Not Cooling",
+      category: "HVAC",
+      status: "Pending",
+      urgency: "High",
+      date: "2024-03-14",
+      description: "Air conditioning unit is not cooling properly",
+      updates: [{ date: "2024-03-14", message: "Request received" }],
     },
     {
       id: 3,
-      title: 'Light Fixture Replacement',
-      category: 'Electrical',
-      status: 'Completed',
-      urgency: 'Low',
-      date: '2024-03-10',
-      description: 'Living room ceiling light needs replacement',
+      title: "Light Fixture Replacement",
+      category: "Electrical",
+      status: "Completed",
+      urgency: "Low",
+      date: "2024-03-10",
+      description: "Living room ceiling light needs replacement",
       updates: [
-        { date: '2024-03-10', message: 'Request received' },
-        { date: '2024-03-11', message: 'Technician assigned' },
-        { date: '2024-03-12', message: 'Repair completed' },
+        { date: "2024-03-10", message: "Request received" },
+        { date: "2024-03-11", message: "Technician assigned" },
+        { date: "2024-03-12", message: "Repair completed" },
       ],
     },
   ];
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
-      case 'completed':
-        return 'bg-green-100 text-green-800';
-      case 'in progress':
-        return 'bg-blue-100 text-blue-800';
-      case 'pending':
-        return 'bg-yellow-100 text-yellow-800';
+      case "completed":
+        return "bg-green-100 text-green-800";
+      case "in progress":
+        return "bg-blue-100 text-blue-800";
+      case "pending":
+        return "bg-yellow-100 text-yellow-800";
       default:
-        return 'bg-gray-100 text-gray-800';
+        return "bg-gray-100 text-gray-800";
     }
   };
 
   const getUrgencyIcon = (urgency) => {
     switch (urgency.toLowerCase()) {
-      case 'high':
+      case "high":
         return <AlertTriangle className="h-5 w-5 text-red-500" />;
-      case 'medium':
+      case "medium":
         return <Clock className="h-5 w-5 text-yellow-500" />;
-      case 'low':
+      case "low":
         return <Tool className="h-5 w-5 text-blue-500" />;
       default:
         return <Tool className="h-5 w-5 text-gray-500" />;
@@ -80,10 +83,7 @@ export function RequestList() {
 
       <div className="grid gap-6">
         {requests.map((request) => (
-          <div
-            key={request.id}
-            className="rounded-lg bg-white p-6 shadow-sm"
-          >
+          <div key={request.id} className="rounded-lg bg-white p-6 shadow-sm">
             <div className="mb-4 flex items-center justify-between">
               <div className="flex items-center space-x-4">
                 {getUrgencyIcon(request.urgency)}
@@ -120,7 +120,7 @@ export function RequestList() {
               <Button variant="outline" size="sm">
                 View Details
               </Button>
-              {request.status !== 'Completed' && (
+              {request.status !== "Completed" && (
                 <Button size="sm">Update Status</Button>
               )}
             </div>

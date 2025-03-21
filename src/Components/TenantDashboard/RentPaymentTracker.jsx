@@ -1,40 +1,46 @@
-import React from 'react';
-import { Button } from './ui/button';
-import { Calendar, DollarSign, CheckCircle, AlertCircle, Clock } from 'lucide-react';
+import React from "react";
+import { Button } from "../common/ui/button";
+import {
+  Calendar,
+  DollarSign,
+  CheckCircle,
+  AlertCircle,
+  Clock,
+} from "lucide-react";
 
 export function RentPaymentTracker() {
   const payments = [
     {
       id: 1,
-      month: 'March 2024',
+      month: "March 2024",
       amount: 1200,
-      dueDate: '2024-03-01',
-      status: 'Paid',
-      paymentDate: '2024-02-28',
+      dueDate: "2024-03-01",
+      status: "Paid",
+      paymentDate: "2024-02-28",
     },
     {
       id: 2,
-      month: 'April 2024',
+      month: "April 2024",
       amount: 1200,
-      dueDate: '2024-04-01',
-      status: 'Pending',
+      dueDate: "2024-04-01",
+      status: "Pending",
     },
     {
       id: 3,
-      month: 'May 2024',
+      month: "May 2024",
       amount: 1200,
-      dueDate: '2024-05-01',
-      status: 'Upcoming',
+      dueDate: "2024-05-01",
+      status: "Upcoming",
     },
   ];
 
   const getStatusIcon = (status) => {
     switch (status.toLowerCase()) {
-      case 'paid':
+      case "paid":
         return <CheckCircle className="h-5 w-5 text-green-500" />;
-      case 'pending':
+      case "pending":
         return <Clock className="h-5 w-5 text-yellow-500" />;
-      case 'overdue':
+      case "overdue":
         return <AlertCircle className="h-5 w-5 text-red-500" />;
       default:
         return <Calendar className="h-5 w-5 text-gray-500" />;
@@ -43,14 +49,14 @@ export function RentPaymentTracker() {
 
   const getStatusColor = (status) => {
     switch (status.toLowerCase()) {
-      case 'paid':
-        return 'bg-green-100 text-green-800';
-      case 'pending':
-        return 'bg-yellow-100 text-yellow-800';
-      case 'overdue':
-        return 'bg-red-100 text-red-800';
+      case "paid":
+        return "bg-green-100 text-green-800";
+      case "pending":
+        return "bg-yellow-100 text-yellow-800";
+      case "overdue":
+        return "bg-red-100 text-red-800";
       default:
-        return 'bg-gray-100 text-gray-800';
+        return "bg-gray-100 text-gray-800";
     }
   };
 
@@ -77,7 +83,9 @@ export function RentPaymentTracker() {
           <p className="mt-1 text-sm text-gray-500">Last paid: Feb 28, 2024</p>
         </div>
         <div className="rounded-lg bg-white p-6 shadow-sm">
-          <h3 className="text-sm font-medium text-gray-500">Total Paid (2024)</h3>
+          <h3 className="text-sm font-medium text-gray-500">
+            Total Paid (2024)
+          </h3>
           <p className="mt-2 text-3xl font-semibold">$3,600</p>
           <p className="mt-1 text-sm text-gray-500">3 payments</p>
         </div>
@@ -90,7 +98,10 @@ export function RentPaymentTracker() {
         </div>
         <div className="divide-y">
           {payments.map((payment) => (
-            <div key={payment.id} className="flex items-center justify-between px-6 py-4">
+            <div
+              key={payment.id}
+              className="flex items-center justify-between px-6 py-4"
+            >
               <div className="flex items-center space-x-4">
                 {getStatusIcon(payment.status)}
                 <div>
@@ -133,7 +144,9 @@ export function RentPaymentTracker() {
               </div>
               <div>
                 <p className="font-medium">Auto-Pay</p>
-                <p className="text-sm text-gray-500">Enabled for monthly rent</p>
+                <p className="text-sm text-gray-500">
+                  Enabled for monthly rent
+                </p>
               </div>
             </div>
             <Button variant="outline" size="sm">

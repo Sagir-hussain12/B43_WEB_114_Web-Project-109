@@ -1,20 +1,20 @@
-import React, { useState } from 'react';
-import { Button } from './ui/button';
-import { AlertCircle, Upload } from 'lucide-react';
+import React, { useState } from "react";
+import { Button } from "../common/ui/button";
+import { AlertCircle, Upload } from "lucide-react";
 
 export function MaintenanceRequestForm() {
   const [formData, setFormData] = useState({
-    title: '',
-    category: '',
-    urgency: '',
-    description: '',
+    title: "",
+    category: "",
+    urgency: "",
+    description: "",
     images: [],
   });
 
   const handleSubmit = (e) => {
     e.preventDefault();
     // Handle form submission
-    console.log('Form submitted:', formData);
+    console.log("Form submitted:", formData);
   };
 
   const handleFileChange = (e) => {
@@ -34,7 +34,9 @@ export function MaintenanceRequestForm() {
             type="text"
             className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             value={formData.title}
-            onChange={(e) => setFormData({ ...formData, title: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, title: e.target.value })
+            }
             placeholder="Brief description of the issue"
           />
         </div>
@@ -47,7 +49,9 @@ export function MaintenanceRequestForm() {
             <select
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               value={formData.category}
-              onChange={(e) => setFormData({ ...formData, category: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, category: e.target.value })
+              }
             >
               <option value="">Select a category</option>
               <option value="plumbing">Plumbing</option>
@@ -66,13 +70,17 @@ export function MaintenanceRequestForm() {
             <select
               className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
               value={formData.urgency}
-              onChange={(e) => setFormData({ ...formData, urgency: e.target.value })}
+              onChange={(e) =>
+                setFormData({ ...formData, urgency: e.target.value })
+              }
             >
               <option value="">Select urgency level</option>
               <option value="low">Low - Non-urgent</option>
               <option value="medium">Medium - Needs attention</option>
               <option value="high">High - Urgent</option>
-              <option value="emergency">Emergency - Immediate attention required</option>
+              <option value="emergency">
+                Emergency - Immediate attention required
+              </option>
             </select>
           </div>
         </div>
@@ -85,7 +93,9 @@ export function MaintenanceRequestForm() {
             className="mt-1 block w-full rounded-md border border-gray-300 px-3 py-2 shadow-sm focus:border-primary focus:outline-none focus:ring-1 focus:ring-primary"
             rows="4"
             value={formData.description}
-            onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+            onChange={(e) =>
+              setFormData({ ...formData, description: e.target.value })
+            }
             placeholder="Please provide detailed information about the issue..."
           />
         </div>
@@ -123,8 +133,8 @@ export function MaintenanceRequestForm() {
         <div className="flex items-center rounded-md bg-blue-50 p-4 text-sm text-blue-800">
           <AlertCircle className="mr-2 h-5 w-5" />
           <p>
-            For emergency maintenance issues outside of business hours, please call our
-            24/7 emergency maintenance line at (555) 123-4567
+            For emergency maintenance issues outside of business hours, please
+            call our 24/7 emergency maintenance line at (555) 123-4567
           </p>
         </div>
 
