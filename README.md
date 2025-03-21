@@ -56,13 +56,13 @@ A **frontend-focused** web application designed to streamline communication betw
 Here are some screenshots of the platform:
 
 1. **Tenant Dashboard**:
-   ![Tenant Dashboard](screenshots/tenant-dashboard.png)
+   ![Tenant Dashboard](https://imgur.com/a/um2NKen)
 2. **Landlord Dashboard**:
-   ![Landlord Dashboard](screenshots/landlord-dashboard.png)
+   ![Landlord Dashboard](https://imgur.com/a/8TguuyH)
 3. **Maintenance Request Form**:
-   ![Maintenance Request Form](screenshots/maintenance-form.png)
+   ![Maintenance Request Form](https://imgur.com/a/hZrTJnO)
 4. **Chat Interface**:
-   ![Chat Interface](screenshots/chat-interface.png)
+   ![Chat Interface](https://imgur.com/a/XJ9Vt1a)
 
 ---
 
