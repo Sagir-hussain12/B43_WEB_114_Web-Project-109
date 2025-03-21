@@ -202,20 +202,27 @@ export function TenantDashboard() {
       <main className={`${isMobile ? 'mt-16' : 'ml-64'} min-h-screen bg-gray-50 p-4 md:p-8`}>
         {/* Header - Desktop only */}
         {!isMobile && (
-          <header className="mb-8 flex items-center justify-between">
-            <h2 className="text-2xl font-bold">
-              {navigationItems.find((item) => item.id === activeTab)?.label}
-            </h2>
-            <NotificationDropdown />
-          </header>
-        )}
+    <header className="mb-8 p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg">
+      <div className="flex items-center justify-between">
+        <h2 className="text-2xl font-bold text-white">
+          {navigationItems.find((item) => item.id === activeTab)?.label}
+        </h2>
+        <div className="flex items-center space-x-4">
+          <NotificationDropdown />
 
-        {/* Mobile Header Title */}
-        {isMobile && (
-          <h2 className="mb-6 text-xl font-bold">
-            {navigationItems.find((item) => item.id === activeTab)?.label}
-          </h2>
-        )}
+        </div>
+      </div>
+    </header>
+  )}
+
+  {/* Mobile Header Title */}
+  {isMobile && (
+    <header className="mb-6 p-4 bg-gradient-to-r from-blue-600 to-purple-600 rounded-lg shadow-lg">
+      <h2 className="text-xl font-bold text-white">
+        {navigationItems.find((item) => item.id === activeTab)?.label}
+      </h2>
+    </header>
+  )}
 
         <FloatingChatbot />
         
