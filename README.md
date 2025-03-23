@@ -154,8 +154,9 @@ This project is licensed under the **MIT License**. See the [LICENSE](LICENSE) f
 
 ## **Contact**
 For any questions or feedback, feel free to reach out:
-- **Your Name**: [Your Email]
-- **GitHub**: [Your GitHub Profile](https://github.com/your-username)
+- **Your Name**: sagiransary18@gmail.com
+- **GitHub**: https://github.com/Sagir-hussain12
+- **Project Link**: https://propertyconnect.netlify.app/
 
 ---
 
